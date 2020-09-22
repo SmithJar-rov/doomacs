@@ -1,5 +1,6 @@
 (package! ewal)
 (package! ewal-doom-themes)
+(package! org-recur)
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 

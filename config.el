@@ -16,6 +16,19 @@
 ;; clients, file templates and snippets.
 (setq user-full-name "John Doe"
       user-mail-address "john@doe.com")
+
+(use-package org-recur
+     :hook ((org-mode . org-recur-mode)
+	    (org-agenda-mode . org-recur-agenda-mode))
+     :demand t
+     :config
+     (define-key org-recur-mode-map (kbd "C-c d") 'org-recur-finish)
+     ;; Rebind the 'd' key in org-agenda (default: 'org-agenda-day-view')
+     (define-key org-recur-agenda-mode-map (kbd "d") 'org-recur-finish)
+     (define-key org-recur-agenda-mode-map (kbd "C-c d") 'org-recur-finish)
+
+     (setq org-recur-finish-done t
+	   org-recur-finish-archive t))
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
