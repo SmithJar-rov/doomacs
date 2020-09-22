@@ -14,8 +14,30 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
+;; settings for org-recur
+;; Refresh org-agenda after rescheduling a task
+(defun org-agenda-refresh ()
+  "Refresh all `org-agenda' buffers."
+  (dolist (buffer (buffer-list))
+    (with-current-buffer buffer
+	(when (derived-mode-p 'org-agenda-mode)
+	  (org-agenda-maybe-redo)))))
+(defadvice org-schedule (after refresh-agenda activate)
+	   "Refresh org-agenda"
+	   (org-agenda-refresh))
+
+;;email settings
 (setq user-full-name "John Doe"
       user-mail-address "john@doe.com")
+
+;; Log time a task was set to Done
+(setq org-log-done (quote time))
+
+;;Don't log the time a task was rescheduled or redeadlined
+(setq org-log-redeadline nil)
+(setq org-log-reschedule nil)
+
+(setq org-read-date-prefer-future 'time)
 
 (use-package org-recur
      :hook ((org-mode . org-recur-mode)
