@@ -2,6 +2,18 @@
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
+(use-package elfeed-org
+	     :ensure t
+	     :config
+	     (elfeed-org)
+	     (setq rmh-elfeed-org-files (list "/home/jared/bureau/elfeed.org")))
+
+(use-package elfeed
+	     :ensure t
+	     :bind (:map elfeed-search-mode-map
+			 ("A" . bjm/elfeed-show-all)
+			 ("S" . bjm/elfeed-show-system)
+			 ("N" . bjm/elfeed-show-news)))
 
 (use-package ewal)
 ;;(use-package ewal-doom-themes
@@ -95,3 +107,17 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(elfeed-feeds '("https://www.france24.com/fr/rss"))
+ '(org-agenda-files
+   '("~/bureau/leftovers.org" "~/bureau/roblox.org" "~/bureau/bills.org" "~/bureau/pentacene.org" "~/bureau/la.org" "~/bureau/mechanics.org" "~/bureau/electronics.org" "~/bureau/number.org" "~/bureau/recurring.org" "~/bureau/daily.org")))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

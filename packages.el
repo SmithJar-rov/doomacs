@@ -1,6 +1,9 @@
 (package! ewal)
 (package! ewal-doom-themes)
 (package! org-recur)
+(package! elfeed)
+(package! elfeed-org)
+(package! arduino-mode)
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
