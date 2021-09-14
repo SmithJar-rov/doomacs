@@ -2,20 +2,24 @@
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
-(use-package elfeed-org
-	     :ensure t
-	     :config
-	     (elfeed-org)
-	     (setq rmh-elfeed-org-files (list "/home/jared/bureau/elfeed.org")))
+(use-package arduino-mode)
 
-(use-package elfeed
-	     :ensure t
-	     :bind (:map elfeed-search-mode-map
-			 ("A" . bjm/elfeed-show-all)
-			 ("S" . bjm/elfeed-show-system)
-			 ("N" . bjm/elfeed-show-news)))
+;; (use-package elfeed-org
+;; 	     :ensure t
+;; 	     :config
+;; 	     (elfeed-org)
+;; 	     (setq rmh-elfeed-org-files (list "/home/jared/bureau/elfeed.org")))
 
-(use-package ewal)
+;; (use-package elfeed
+;; 	     :ensure t
+;; 	     :bind (:map elfeed-search-mode-map
+;; 			 ("A" . bjm/elfeed-show-all)
+;; 			 ("S" . bjm/elfeed-show-system)
+;; 			 ("N" . bjm/elfeed-show-news)))
+
+;; (require 'ein)
+
+;;(use-package ewal)
 ;;(use-package ewal-doom-themes
 ;;	:straight (ewal-doom-themes
 ;;		    :host gitlab
@@ -39,7 +43,7 @@
 	   (org-agenda-refresh))
 
 ;;email settings
-(setq user-full-name "John Doe"
+(setq user-full-name "Jared Smith"
       user-mail-address "john@doe.com")
 
 ;; Log time a task was set to Done
@@ -80,8 +84,10 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 ;;(setq doom-theme 'doom-one)
-(load-theme 'ewal-doom-one t)
-(enable-theme 'ewal-doom-one)
+;;(load-theme 'ewal-doom-one t)
+;;(enable-theme 'ewal-doom-one)
+(load-theme 'doom-solarized-dark t)
+
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -90,6 +96,7 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
+(setq nlinum-highlight-current-line t)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -103,8 +110,7 @@
 ;;
 ;; To get information about any of these functions/macros, move the cursor over
 ;; the highlighted symbol at press 'K' (non-evil users must press 'C-c c k').
-;; This will open documentation for it, including demos of how they are used.
-;;
+;; This will open documentation for it, including demos of how they are used.  ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 (custom-set-variables
@@ -114,7 +120,8 @@
  ;; If there is more than one, they won't work right.
  '(elfeed-feeds '("https://www.france24.com/fr/rss"))
  '(org-agenda-files
-   '("~/bureau/leftovers.org" "~/bureau/roblox.org" "~/bureau/bills.org" "~/bureau/pentacene.org" "~/bureau/la.org" "~/bureau/mechanics.org" "~/bureau/electronics.org" "~/bureau/number.org" "~/bureau/recurring.org" "~/bureau/daily.org")))
+   '("~/bureau/daily.org" "~/bureau/recurring.org" "~/bureau/leftovers.org" "~/bureau/bills.org" ))
+ '(package-selected-packages '(elfeed-org)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

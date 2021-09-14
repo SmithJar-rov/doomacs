@@ -4,6 +4,12 @@
 (package! elfeed)
 (package! elfeed-org)
 (package! arduino-mode)
+(package! pdf-tools)
+(package! ein)
+(package! platformio-mode)
+(package! xcscope)
+(package! imenu-anywhere)
+;; (package! matrix-client)
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
